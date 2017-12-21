@@ -29,9 +29,26 @@
 　　（退出并清空内存中的数据。）
 　　这个do文件的“头尾”并非我的发明，而是从沈明高老师那里学到的。版权归沈明高老师。（待续）
 
-##### 
+##### log文件使用
 cd E:\git\stata\logfile 切换目录
 log using 20171221 在目录下创建log文件
+log close
 
+##### 数据类型
+1、数值 byte,int,long,float,double
+d = describe 显示数据类型
+compress 压缩数据
+recast double x  将x变成double类型
+字符
+"""" 表示缺失值
+"" "" 表示空值
+日期
+1960年1月1日为0天，往前为-1，往后为1
 
+destring, replace 字符串转数值
 
+2、日期的转换 date函数
+假设数据格式为may 15 2017，一个字符和两个数值
+tostring day year，replace 全部转换成str
+gen date1=month+"/"+day+"/"+year 生成一个字符串
+gen date2=date(date1,"mdy")  mdy表示 month day year

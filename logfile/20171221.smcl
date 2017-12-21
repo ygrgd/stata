@@ -783,4 +783,1900 @@ end of do-file
 {com}. 
 {txt}end of do-file
 
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sum score
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 7}score {c |}{res}         11         645    3.316625        640        650
+{txt}
 {com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sum score [weight=num]
+{txt}(analytic weights assumed)
+
+    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+{space 7}score {c |}{res}      11         465    646.4903   3.884966        640        650
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sum score, detail
+
+                            {txt}score
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      640            640
+{txt} 5%    {res}      640            641
+{txt}10%    {res}      641            642       {txt}Obs         {res}         11
+{txt}25%    {res}      642            643       {txt}Sum of Wgt. {res}         11
+
+{txt}50%    {res}      645                      {txt}Mean          {res}      645
+                        {txt}Largest       Std. Dev.     {res} 3.316625
+{txt}75%    {res}      648            647
+{txt}90%    {res}      649            648       {txt}Variance      {res}       11
+{txt}95%    {res}      650            649       {txt}Skewness      {res}        0
+{txt}99%    {res}      650            650       {txt}Kurtosis      {res}     1.78
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sysuse auto, clear
+{txt}(1978 Automobile Data)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list price in 1/30, sep(10) //每10 个观察值之间加一横线
+{txt}
+     {c TLC}{hline 8}{c TRC}
+     {c |} {res} price {txt}{c |}
+     {c LT}{hline 8}{c RT}
+  1. {c |} {res} 4,099 {txt}{c |}
+  2. {c |} {res} 4,749 {txt}{c |}
+  3. {c |} {res} 3,799 {txt}{c |}
+  4. {c |} {res} 4,816 {txt}{c |}
+  5. {c |} {res} 7,827 {txt}{c |}
+  6. {c |} {res} 5,788 {txt}{c |}
+  7. {c |} {res} 4,453 {txt}{c |}
+  8. {c |} {res} 5,189 {txt}{c |}
+  9. {c |} {res}10,372 {txt}{c |}
+ 10. {c |} {res} 4,082 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 11. {c |} {res}11,385 {txt}{c |}
+ 12. {c |} {res}14,500 {txt}{c |}
+ 13. {c |} {res}15,906 {txt}{c |}
+ 14. {c |} {res} 3,299 {txt}{c |}
+ 15. {c |} {res} 5,705 {txt}{c |}
+ 16. {c |} {res} 4,504 {txt}{c |}
+ 17. {c |} {res} 5,104 {txt}{c |}
+ 18. {c |} {res} 3,667 {txt}{c |}
+ 19. {c |} {res} 3,955 {txt}{c |}
+ 20. {c |} {res} 3,984 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 21. {c |} {res} 4,010 {txt}{c |}
+ 22. {c |} {res} 5,886 {txt}{c |}
+ 23. {c |} {res} 6,342 {txt}{c |}
+ 24. {c |} {res} 4,389 {txt}{c |}
+ 25. {c |} {res} 4,187 {txt}{c |}
+ 26. {c |} {res}11,497 {txt}{c |}
+ 27. {c |} {res}13,594 {txt}{c |}
+ 28. {c |} {res}13,466 {txt}{c |}
+ 29. {c |} {res} 3,829 {txt}{c |}
+ 30. {c |} {res} 5,379 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . list price in 10/30, sep(2) //每2 个观察值之间加一横线
+{txt}
+     {c TLC}{hline 8}{c TRC}
+     {c |} {res} price {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 10. {c |} {res} 4,082 {txt}{c |}
+ 11. {c |} {res}11,385 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 12. {c |} {res}14,500 {txt}{c |}
+ 13. {c |} {res}15,906 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 14. {c |} {res} 3,299 {txt}{c |}
+ 15. {c |} {res} 5,705 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 16. {c |} {res} 4,504 {txt}{c |}
+ 17. {c |} {res} 5,104 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 18. {c |} {res} 3,667 {txt}{c |}
+ 19. {c |} {res} 3,955 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 20. {c |} {res} 3,984 {txt}{c |}
+ 21. {c |} {res} 4,010 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 22. {c |} {res} 5,886 {txt}{c |}
+ 23. {c |} {res} 6,342 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 24. {c |} {res} 4,389 {txt}{c |}
+ 25. {c |} {res} 4,187 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 26. {c |} {res}11,497 {txt}{c |}
+ 27. {c |} {res}13,594 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 28. {c |} {res}13,466 {txt}{c |}
+ 29. {c |} {res} 3,829 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 30. {c |} {res} 5,379 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list price, nohead //不要表头
+{txt}     {c TLC}{hline 8}{c TRC}
+  1. {c |} {res} 4,099 {txt}{c |}
+  2. {c |} {res} 4,749 {txt}{c |}
+  3. {c |} {res} 3,799 {txt}{c |}
+  4. {c |} {res} 4,816 {txt}{c |}
+  5. {c |} {res} 7,827 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+  6. {c |} {res} 5,788 {txt}{c |}
+  7. {c |} {res} 4,453 {txt}{c |}
+  8. {c |} {res} 5,189 {txt}{c |}
+  9. {c |} {res}10,372 {txt}{c |}
+ 10. {c |} {res} 4,082 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 11. {c |} {res}11,385 {txt}{c |}
+ 12. {c |} {res}14,500 {txt}{c |}
+ 13. {c |} {res}15,906 {txt}{c |}
+ 14. {c |} {res} 3,299 {txt}{c |}
+ 15. {c |} {res} 5,705 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 16. {c |} {res} 4,504 {txt}{c |}
+ 17. {c |} {res} 5,104 {txt}{c |}
+ 18. {c |} {res} 3,667 {txt}{c |}
+ 19. {c |} {res} 3,955 {txt}{c |}
+ 20. {c |} {res} 3,984 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 21. {c |} {res} 4,010 {txt}{c |}
+ 22. {c |} {res} 5,886 {txt}{c |}
+ 23. {c |} {res} 6,342 {txt}{c |}
+ 24. {c |} {res} 4,389 {txt}{c |}
+ 25. {c |} {res} 4,187 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 26. {c |} {res}11,497 {txt}{c |}
+ 27. {c |} {res}13,594 {txt}{c |}
+ 28. {c |} {res}13,466 {txt}{c |}
+ 29. {c |} {res} 3,829 {txt}{c |}
+ 30. {c |} {res} 5,379 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 31. {c |} {res} 6,165 {txt}{c |}
+ 32. {c |} {res} 4,516 {txt}{c |}
+ 33. {c |} {res} 6,303 {txt}{c |}
+ 34. {c |} {res} 3,291 {txt}{c |}
+ 35. {c |} {res} 8,814 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 36. {c |} {res} 5,172 {txt}{c |}
+ 37. {c |} {res} 4,733 {txt}{c |}
+ 38. {c |} {res} 4,890 {txt}{c |}
+ 39. {c |} {res} 4,181 {txt}{c |}
+ 40. {c |} {res} 4,195 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 41. {c |} {res}10,371 {txt}{c |}
+ 42. {c |} {res} 4,647 {txt}{c |}
+ 43. {c |} {res} 4,425 {txt}{c |}
+ 44. {c |} {res} 4,482 {txt}{c |}
+ 45. {c |} {res} 6,486 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 46. {c |} {res} 4,060 {txt}{c |}
+ 47. {c |} {res} 5,798 {txt}{c |}
+ 48. {c |} {res} 4,934 {txt}{c |}
+ 49. {c |} {res} 5,222 {txt}{c |}
+ 50. {c |} {res} 4,723 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 51. {c |} {res} 4,424 {txt}{c |}
+ 52. {c |} {res} 4,172 {txt}{c |}
+ 53. {c |} {res} 9,690 {txt}{c |}
+ 54. {c |} {res} 6,295 {txt}{c |}
+ 55. {c |} {res} 9,735 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 56. {c |} {res} 6,229 {txt}{c |}
+ 57. {c |} {res} 4,589 {txt}{c |}
+ 58. {c |} {res} 5,079 {txt}{c |}
+ 59. {c |} {res} 8,129 {txt}{c |}
+ 60. {c |} {res} 4,296 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 61. {c |} {res} 5,799 {txt}{c |}
+ 62. {c |} {res} 4,499 {txt}{c |}
+ 63. {c |} {res} 3,995 {txt}{c |}
+ 64. {c |} {res}12,990 {txt}{c |}
+ 65. {c |} {res} 3,895 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 66. {c |} {res} 3,798 {txt}{c |}
+ 67. {c |} {res} 5,899 {txt}{c |}
+ 68. {c |} {res} 3,748 {txt}{c |}
+ 69. {c |} {res} 5,719 {txt}{c |}
+ 70. {c |} {res} 7,140 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 71. {c |} {res} 5,397 {txt}{c |}
+ 72. {c |} {res} 4,697 {txt}{c |}
+ 73. {c |} {res} 6,850 {txt}{c |}
+ 74. {c |} {res}11,995 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. sysuse nlswork,clear
+{err}file "nlswork.dta" not found
+{txt}{search r(601), local:r(601);}
+
+{com}. use nlswork,clear
+{err}{p 0 4 2}
+file nlswork.dta
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+{com}. webuse nlswork,clear
+{txt}(National Longitudinal Survey.  Young Women 14-26 years of age in 1968)
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. use http://fmwww.bc.edu/ec-p/data/wooldridge/CEOSAL1
+{err}{p 0 4 2}
+file http://fmwww.bc.edu/ec-p/data/wooldridge/CEOSAL1.dta
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+end of do-file
+
+{search r(601), local:r(601);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . set obs 1 //将设定一个观察值
+{txt}{p}
+number of observations (_N)  was 0,
+now 1
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen a=1 //生成一个新变量a,令a 取值为1
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             1                          
+{txt} size:{res}             4                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . compress //在不损害信息的基础上压缩，使数据占用空间尽可能小
+  {txt}variable {bf}a{sf} was {bf}{res}float{sf}{txt} now {bf}{res}byte{sf}
+{txt}  (3 bytes saved)
+
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             1                          
+{txt} size:{res}             1                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: byte    }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. replace a=101 /* 注意a 的storage type 现在自动升为int 型，
+> 因为byte 最大只能为100*/
+{txt}variable {bf}a{sf} was {bf}{res}byte{sf}{txt} now {bf}{res}int{sf}
+{txt}(1 real change made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . replace a=100
+{txt}(1 real change made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . compress
+  {txt}variable {bf}a{sf} was {bf}{res}int{sf}{txt} now {bf}{res}byte{sf}
+{txt}  (1 byte saved)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . d //重新变回到byte 型
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             1                          
+{txt} size:{res}             1                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: byte    }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . replace a=32741 //直接变到long 型,因为int 型最大只能到32740
+{txt}variable {bf}a{sf} was {bf}{res}byte{sf}{txt} now {bf}{res}long{sf}
+{txt}(1 real change made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . gen double b=1 //直接生成双精度变量b
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . recast double a //将a 变成双精度变量b
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . d //注意到a 和b 均为双精度型
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             2                          
+{txt} size:{res}            16                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: double  }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b              }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. help recast
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . recast long a //将a 变成双精度变量b
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . d //注意到a 和b 均为双精度型
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             2                          
+{txt} size:{res}            12                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: long    }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b              }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . recast  a //将a 变成双精度变量b
+{err}varlist required
+{txt}{search r(100), local:r(100);}
+
+end of do-file
+
+{search r(100), local:r(100);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . recast  double a //将a 变成双精度变量b
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data
+  obs:{res}             1                          
+{txt} vars:{res}             2                          
+{txt} size:{res}            16                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:a              }{txt}{bind: double  }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b              }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. display 2/0
+{res}.
+
+{com}. mvencode age,mv(-9996)
+{err}variable {bf}age{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. sysuse nlswork,clear
+{err}file "nlswork.dta" not found
+{txt}{search r(601), local:r(601);}
+
+{com}. webuse nlswork, clear
+{txt}(National Longitudinal Survey.  Young Women 14-26 years of age in 1968)
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/nlswork.dta
+{txt}  obs:{res}        28,534                          National Longitudinal
+                                                Survey.  Young Women 14-26
+                                                years of age in 1968
+{txt} vars:{res}            21                          27 Nov 2016 08:14
+{txt} size:{res}       941,622                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:idcode         }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}NLS ID{p_end}
+{p 0 48}{bind:year           }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}interview year{p_end}
+{p 0 48}{bind:birth_yr       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}birth year{p_end}
+{p 0 48}{bind:age            }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}age in current year{p_end}
+{p 0 48}{bind:race           }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:racelbl  }{bind:  }{res}{res}race{p_end}
+{p 0 48}{bind:msp            }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if married, spouse present{p_end}
+{p 0 48}{bind:nev_mar        }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if never married{p_end}
+{p 0 48}{bind:grade          }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}current grade completed{p_end}
+{p 0 48}{bind:collgrad       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if college graduate{p_end}
+{p 0 48}{bind:not_smsa       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if not SMSA{p_end}
+{p 0 48}{bind:c_city         }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if central city{p_end}
+{p 0 48}{bind:south          }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if south{p_end}
+{p 0 48}{bind:ind_code       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}industry of employment{p_end}
+{p 0 48}{bind:occ_code       }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}occupation{p_end}
+{p 0 48}{bind:union          }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}1 if union{p_end}
+{p 0 48}{bind:wks_ue         }{txt}{bind: byte    }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}weeks unemployed last year{p_end}
+{p 0 48}{bind:ttl_exp        }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}total work experience{p_end}
+{p 0 48}{bind:tenure         }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}job tenure, in years{p_end}
+{p 0 48}{bind:hours          }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}usual hours worked{p_end}
+{p 0 48}{bind:wks_work       }{txt}{bind: int     }{bind:{txt}%8.0g     }{space 1}{bind:         }{bind:  }{res}{res}weeks worked last year{p_end}
+{p 0 48}{bind:ln_wage        }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}ln(wage/GNP deflator){p_end}
+{txt}{hline}
+Sorted by: {res}idcode  year
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. mvencode age,mv(-9996)
+         {txt}age:{col 15}{res}24{txt} missing values recoded
+{col 15}(recast to int)
+
+{com}. 
+{txt}end of do-file
+
+{com}. sum a,d
+
+                     {txt}age in current year
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       18          -9996
+{txt} 5%    {res}       19          -9996
+{txt}10%    {res}       21          -9996       {txt}Obs         {res}     28,534
+{txt}25%    {res}       23          -9996       {txt}Sum of Wgt. {res}     28,534
+
+{txt}50%    {res}       28                      {txt}Mean          {res} 20.61302
+                        {txt}Largest       Std. Dev.     {res} 290.7039
+{txt}75%    {res}       34             45
+{txt}90%    {res}       38             45       {txt}Variance      {res} 84508.74
+{txt}95%    {res}       41             46       {txt}Skewness      {res}-34.40969
+{txt}99%    {res}       44             46       {txt}Kurtosis      {res} 1185.658
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . mvdecode age,mv(-9996) //把-9996转换成控制
+         {txt}age:{res}{col 15}24{txt} missing values generated
+
+{com}. 
+{txt}end of do-file
+
+{com}. sort a
+
+. edit
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. webuse destring1, clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring1.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             5                          3 Mar 2016 10:15
+{txt} size:{res}           200                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:num            }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:code           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:total          }{txt}{bind: str5    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:income         }{txt}{bind: str5    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+
+{com}. sum
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 10}id {c |}{res}          0
+{txt}{space 9}num {c |}{res}          0
+{txt}{space 8}code {c |}{res}          0
+{txt}{space 7}total {c |}{res}          0
+{txt}{space 6}income {c |}{res}          0
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring, replace //全部转换为数值型，replace 表示将原来的变量（值）更新
+{txt}id: all characters numeric; {res}replaced {txt}as {res}int
+{txt}num: all characters numeric; {res}replaced {txt}as {res}int
+{txt}code: all characters numeric; {res}replaced {txt}as {res}int
+{txt}total: all characters numeric; {res}replaced {txt}as {res}long
+{txt}income: all characters numeric; {res}replaced {txt}as {res}long
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring1.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             5                          3 Mar 2016 10:15
+{txt} size:{res}           140                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: int     }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:num            }{txt}{bind: int     }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:code           }{txt}{bind: int     }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:total          }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:income         }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list date
+{err}variable {bf}date{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. list d
+{err}variable {bf}d{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. edit
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. .webuse destring2, clear
+{err}invalid syntax
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. . webuse destring2, clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. des //注意到所有的变量均为字符型 str
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring2.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             3                          3 Mar 2016 22:50
+{txt} size:{res}           280                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date           }{txt}{bind: str14   }{bind:{txt}%10s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:price          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:percent        }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list date //注意到date 年月日之间均有空格
+{txt}
+     {c TLC}{hline 12}{c TRC}
+     {c |} {res}      date {txt}{c |}
+     {c LT}{hline 12}{c RT}
+  1. {c |} {res}1999 12 10 {txt}{c |}
+  2. {c |} {res}2000 07 08 {txt}{c |}
+  3. {c |} {res}1997 03 02 {txt}{c |}
+  4. {c |} {res}1999 09 00 {txt}{c |}
+  5. {c |} {res}1998 10 04 {txt}{c |}
+     {c LT}{hline 12}{c RT}
+  6. {c |} {res}2000 03 28 {txt}{c |}
+  7. {c |} {res}2000 08 08 {txt}{c |}
+  8. {c |} {res}1997 10 20 {txt}{c |}
+  9. {c |} {res}1998 01 16 {txt}{c |}
+ 10. {c |} {res}1999 11 12 {txt}{c |}
+     {c BLC}{hline 12}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring date, replace
+{txt}date: contains nonnumeric characters; no {res}replace
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring date, replace ignore(“ ”)
+{txt}date: character{res} space{txt} removed; {res}replaced {txt}as {res}long
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. des //注意到date 的storage type 已变为long
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring2.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             3                          3 Mar 2016 22:50
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date           }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:price          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:percent        }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list date //注意到空格消失了
+{txt}
+     {c TLC}{hline 10}{c TRC}
+     {c |} {res}    date {txt}{c |}
+     {c LT}{hline 10}{c RT}
+  1. {c |} {res}19991210 {txt}{c |}
+  2. {c |} {res}20000708 {txt}{c |}
+  3. {c |} {res}19970302 {txt}{c |}
+  4. {c |} {res}19990900 {txt}{c |}
+  5. {c |} {res}19981004 {txt}{c |}
+     {c LT}{hline 10}{c RT}
+  6. {c |} {res}20000328 {txt}{c |}
+  7. {c |} {res}20000808 {txt}{c |}
+  8. {c |} {res}19971020 {txt}{c |}
+  9. {c |} {res}19980116 {txt}{c |}
+ 10. {c |} {res}19991112 {txt}{c |}
+     {c BLC}{hline 10}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring2.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             3                          3 Mar 2016 22:50
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date           }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:price          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:percent        }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring price percent, replace ignore(“$ ,%”)
+{err}ignore string must be enclosed with quotes to ignore commas or use options
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring price percent, gen(price2 percent2) ignore(“$ ,%”)
+{err}ignore string must be enclosed with quotes to ignore commas or use options
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/destring2.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             3                          3 Mar 2016 22:50
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date           }{txt}{bind: long    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:price          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:percent        }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. destring price,replace ignore("$")
+{txt}price: contains characters not specified in {res}ignore(){txt}; no {res}replace
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring percent,replace ignore("%")
+{txt}percent: character{res} %{txt} removed; {res}replaced {txt}as {res}byte
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring price,replace ignore("$")  //
+{txt}price: contains characters not specified in {res}ignore(){txt}; no {res}replace
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list p
+{bf}{err}p{sf} ambiguous abbreviation
+{txt}{search r(111), local:r(111);}
+
+{com}. list pr
+{txt}
+     {c TLC}{hline 13}{c TRC}
+     {c |} {res}      price {txt}{c |}
+     {c LT}{hline 13}{c RT}
+  1. {c |} {res}  $2,343.68 {txt}{c |}
+  2. {c |} {res}  $7,233.44 {txt}{c |}
+  3. {c |} {res} $12,442.89 {txt}{c |}
+  4. {c |} {res}$233,325.31 {txt}{c |}
+  5. {c |} {res}  $1,549.23 {txt}{c |}
+     {c LT}{hline 13}{c RT}
+  6. {c |} {res} $23,517.03 {txt}{c |}
+  7. {c |} {res}      $2.43 {txt}{c |}
+  8. {c |} {res}  $9,382.47 {txt}{c |}
+  9. {c |} {res}$289,209.32 {txt}{c |}
+ 10. {c |} {res}  $8,282.49 {txt}{c |}
+     {c BLC}{hline 13}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. destring price,replace ignore("$")  //
+{txt}price: contains characters not specified in {res}ignore(){txt}; no {res}replace
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. gen p2 = price
+
+. edit
+
+. destring p2
+{err}must specify either generate or replace option
+{txt}{search r(198), local:r(198);}
+
+{com}. destring p2,replace
+{txt}p2: contains nonnumeric characters; no {res}replace
+
+{com}. destring p2,replace ignore("$")
+{txt}p2: contains characters not specified in {res}ignore(){txt}; no {res}replace
+
+{com}. clear
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. webuse tostring, clear /*该数据中年月日的数据类型不一样，不能直接相加
+
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. des //注意到month 为字符型，而年和日为数值型
+
+{txt}Contains data
+  obs:{res}             0                          
+{txt} vars:{res}             0                          
+{txt} size:{res}             0                          
+{txt}Sorted by: 
+
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data
+  obs:{res}             0                          
+{txt} vars:{res}             0                          
+{txt} size:{res}             0                          
+{txt}Sorted by: 
+
+{com}. webuse tostring, clear
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c TRC}
+     {c |} {res}       id   month   day   year {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  1. {c |} {res}123456789     jan    10   2001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  6. {c |} {res}123456714     nov    15   2001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c BRC}
+
+{com}. gen date = month + "/" + day +"/" +year
+{err}type mismatch
+{txt}{search r(109), local:r(109);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen date1=month+”/”+day+”/”+year //将年月日构成一个新的日期变量
+{err}” invalid name
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. gen date1=month+”/”+day+”/”+year
+{err}” invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. gen date12 = month+”/”+day+”/”+year
+{err}” invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. destring day year
+{err}must specify either generate or replace option
+{txt}{search r(198), local:r(198);}
+
+{com}.  destring day year,replace
+{txt}day already numeric; no {res}replace
+{txt}year already numeric; no {res}replace
+
+{com}. tostring day year,re
+{err}option {bf:re} not allowed
+{txt}{search r(198), local:r(198);}
+
+{com}. 
+. . tostring day year,replace
+{txt}day was {res:float} now {res:str2}
+year was {res:float} now {res:str4}
+
+{com}. des
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             4                          27 Apr 2016 10:14
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. gen date1=month+”/”+day+”/”+year
+{err}” invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c TRC}
+     {c |} {res}       id   month   day   year {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  1. {c |} {res}123456789     jan    10   2001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  6. {c |} {res}123456714     nov    15   2001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c BRC}
+
+{com}. gen a = month+day+year
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c TRC}
+     {c |} {res}       id   month   day   year           a {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c RT}
+  1. {c |} {res}123456789     jan    10   2001   jan102001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001   mar202001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001   may302001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001    jun92001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001   oct172001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c RT}
+  6. {c |} {res}123456714     nov    15   2001   nov152001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001   dec282001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001   apr292001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001   mar112001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001    jul32001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c BRC}
+
+{com}. gen b = month+"/"+day
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c TRC}
+     {c |} {res}       id   month   day   year           a        b {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c RT}
+  1. {c |} {res}123456789     jan    10   2001   jan102001   jan/10 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001   mar202001   mar/20 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001   may302001   may/30 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001    jun92001    jun/9 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001   oct172001   oct/17 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c RT}
+  6. {c |} {res}123456714     nov    15   2001   nov152001   nov/15 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001   dec282001   dec/28 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001   apr292001   apr/29 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001   mar112001   mar/11 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001    jul32001    jul/3 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c BRC}
+
+{com}. gen b = month+"/"+day+"/"+year
+{err}variable {bf}b{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+{com}. 
+. . gen c = month+"/"+day+"/"+year
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c -}{hline 13}{c TRC}
+     {c |} {res}       id   month   day   year           a        b             c {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c -}{hline 13}{c RT}
+  1. {c |} {res}123456789     jan    10   2001   jan102001   jan/10   jan/10/2001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001   mar202001   mar/20   mar/20/2001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001   may302001   may/30   may/30/2001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001    jun92001    jun/9    jun/9/2001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001   oct172001   oct/17   oct/17/2001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c -}{hline 13}{c RT}
+  6. {c |} {res}123456714     nov    15   2001   nov152001   nov/15   nov/15/2001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001   dec282001   dec/28   dec/28/2001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001   apr292001   apr/29   apr/29/2001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001   mar112001   mar/11   mar/11/2001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001    jul32001    jul/3    jul/3/2001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 11}{c -}{hline 8}{c -}{hline 13}{c BRC}
+
+{com}. gen date1=month+”/”+day+”/”+year
+{err}” invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen date1=month+"/"+day+"/"+year //失败
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen date2=date(date1,"mdy") /* date（）为日期函数，它以1960 年1 月1
+
+{txt}end of do-file
+
+{com}. d date1
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date1          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+
+{com}. d date2
+{err}variable {bf}date2{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen date2=date(date1,"mdy") /* date（）为日期函数，
+
+{txt}end of do-file
+
+{com}. d date2
+{err}variable {bf}date2{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. gen date2=date(date1,"mdy")
+{txt}(10 missing values generated)
+
+{com}. d date1
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date1          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+
+{com}. list date1
+{txt}
+     {c TLC}{hline 13}{c TRC}
+     {c |} {res}      date1 {txt}{c |}
+     {c LT}{hline 13}{c RT}
+  1. {c |} {res}jan/10/2001 {txt}{c |}
+  2. {c |} {res}mar/20/2001 {txt}{c |}
+  3. {c |} {res}may/30/2001 {txt}{c |}
+  4. {c |} {res} jun/9/2001 {txt}{c |}
+  5. {c |} {res}oct/17/2001 {txt}{c |}
+     {c LT}{hline 13}{c RT}
+  6. {c |} {res}nov/15/2001 {txt}{c |}
+  7. {c |} {res}dec/28/2001 {txt}{c |}
+  8. {c |} {res}apr/29/2001 {txt}{c |}
+  9. {c |} {res}mar/11/2001 {txt}{c |}
+ 10. {c |} {res} jul/3/2001 {txt}{c |}
+     {c BLC}{hline 13}{c BRC}
+
+{com}. gen date2=date(date1,"mdy")
+{err}variable {bf}date2{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+{com}. gen date2=date(date1,"mdy"),replace
+{err}variable {bf}date2{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+{com}. date2=date(date1,"mdy"),replace
+{err}command {bf}date2{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. gen date3=date(date1,"mdy"),replace
+{err}option {bf:replace} not allowed
+{txt}{search r(198), local:r(198);}
+
+{com}. drop date2
+
+. gen date2=date(date1,"mdy")
+{txt}(10 missing values generated)
+
+{com}. help date
+
+. drop date2
+
+. gen a1 = date(date1,"mdy",2000)
+{txt}(10 missing values generated)
+
+{com}. date1
+{err}command {bf}date1{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. d date1
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date1          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+
+{com}. replace date1 = "11/10/2001" in 1
+{txt}(1 real change made)
+
+{com}. gen a2 = date(date1,"mdy",2000)
+{txt}(10 missing values generated)
+
+{com}. clear
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. webuse tostring,clear /*该数据中年月日的数据类型不一样，不能直接相加
+
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. des //注意到month 为字符型，而年和日为数值型
+
+{txt}Contains data
+  obs:{res}             0                          
+{txt} vars:{res}             0                          
+{txt} size:{res}             0                          
+{txt}Sorted by: 
+
+{com}. 
+{txt}end of do-file
+
+{com}. webuse tostring,clear
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. webuse tostring,clear 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             4                          27 Apr 2016 10:14
+{txt} size:{res}           200                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c TRC}
+     {c |} {res}       id   month   day   year {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  1. {c |} {res}123456789     jan    10   2001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  6. {c |} {res}123456714     nov    15   2001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. tostring year day, replace //将年和日转化为字符型
+{txt}year was {res:float} now {res:str4}
+day was {res:float} now {res:str2}
+
+{com}. 
+{txt}end of do-file
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             4                          27 Apr 2016 10:14
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c TRC}
+     {c |} {res}       id   month   day   year {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  1. {c |} {res}123456789     jan    10   2001 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c RT}
+  6. {c |} {res}123456714     nov    15   2001 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c BRC}
+
+{com}. gen date1=month+"/"+day+"/"+year
+
+. gen date2=date(date1,"mdy")
+{txt}(10 missing values generated)
+
+{com}. drop date2
+
+. gen date2=date(date1,"MDY")
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c TRC}
+     {c |} {res}       id   month   day   year         date1   date2 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c RT}
+  1. {c |} {res}123456789     jan    10   2001   jan/10/2001   14985 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001   mar/20/2001   15054 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001   may/30/2001   15125 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001    jun/9/2001   15135 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001   oct/17/2001   15265 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c RT}
+  6. {c |} {res}123456714     nov    15   2001   nov/15/2001   15294 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001   dec/28/2001   15337 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001   apr/29/2001   15094 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001   mar/11/2001   15045 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001    jul/3/2001   15159 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c BRC}
+
+{com}. gen visdate = date(date2, "YMD")
+{err}type mismatch
+{txt}{search r(109), local:r(109);}
+
+{com}. 
+. gen a=string(date2, "%12.0f")
+
+. list
+{txt}
+     {c TLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c -}{hline 7}{c TRC}
+     {c |} {res}       id   month   day   year         date1   date2       a {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c -}{hline 7}{c RT}
+  1. {c |} {res}123456789     jan    10   2001   jan/10/2001   14985   14985 {txt}{c |}
+  2. {c |} {res}123456710     mar    20   2001   mar/20/2001   15054   15054 {txt}{c |}
+  3. {c |} {res}123456711     may    30   2001   may/30/2001   15125   15125 {txt}{c |}
+  4. {c |} {res}123456712     jun     9   2001    jun/9/2001   15135   15135 {txt}{c |}
+  5. {c |} {res}123456713     oct    17   2001   oct/17/2001   15265   15265 {txt}{c |}
+     {c LT}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c -}{hline 7}{c RT}
+  6. {c |} {res}123456714     nov    15   2001   nov/15/2001   15294   15294 {txt}{c |}
+  7. {c |} {res}123456715     dec    28   2001   dec/28/2001   15337   15337 {txt}{c |}
+  8. {c |} {res}123456716     apr    29   2001   apr/29/2001   15094   15094 {txt}{c |}
+  9. {c |} {res}123456717     mar    11   2001   mar/11/2001   15045   15045 {txt}{c |}
+ 10. {c |} {res}123456718     jul     3   2001    jul/3/2001   15159   15159 {txt}{c |}
+     {c BLC}{hline 11}{c -}{hline 7}{c -}{hline 5}{c -}{hline 6}{c -}{hline 13}{c -}{hline 7}{c -}{hline 7}{c BRC}
+
+{com}. help date
+
+. format a %d
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+{com}. format date1 %d
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+{com}. d date1
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:date1          }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+
+{com}. form a %td
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+{com}. form date1 %td
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format date1 %tddmy 
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+end of do-file
+
+{search r(120), local:r(120);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format date1 %tddmy 
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+end of do-file
+
+{search r(120), local:r(120);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format date2 %tddmy 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. format date1 %tddmy
+{err}string %fmt required for string variables
+{txt}{search r(120), local:r(120);}
+
+{com}. destring date1，replace
+{err}variable {bf}date1，replace{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. destring date1,replace
+{txt}date1: contains nonnumeric characters; no {res}replace
+
+{com}. clear
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. webuse destring2, clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. webuse tostring,clear
+
+. tostring day year,replace
+{txt}day was {res:float} now {res:str2}
+year was {res:float} now {res:str4}
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             4                          27 Apr 2016 10:14
+{txt} size:{res}           180                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. gen a = year+"/"+month+"/"+day
+
+. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             5                          27 Apr 2016 10:14
+{txt} size:{res}           290                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:a              }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. gen b = date(a,"YMD")
+
+. format b %tdymd
+
+. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             6                          27 Apr 2016 10:14
+{txt} size:{res}           330                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:a              }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b              }{txt}{bind: float   }{bind:{txt}%tdymd    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. gen b2 = date(a,"YMD")
+
+. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/tostring.dta
+{txt}  obs:{res}            10                          
+{txt} vars:{res}             7                          27 Apr 2016 10:14
+{txt} size:{res}           370                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:id             }{txt}{bind: str9    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:month          }{txt}{bind: str3    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:day            }{txt}{bind: str2    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:year           }{txt}{bind: str4    }{bind:{txt}%9s       }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:a              }{txt}{bind: str11   }{bind:{txt}%11s      }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b              }{txt}{bind: float   }{bind:{txt}%tdymd    }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{p 0 48}{bind:b2             }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. webuse census10,clear
+{txt}(1980 Census data by state)
+
+{com}. list 1/4
+{err}1 invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c TRC}
+     {c |} {res}   state   region       pop   medage {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c RT}
+  1. {c |} {res} Alabama    South   3893888     29.3 {txt}{c |}
+  2. {c |} {res}  Alaska     West    401851     26.1 {txt}{c |}
+  3. {c |} {res} Arizona     West   2718215     29.2 {txt}{c |}
+  4. {c |} {res}Arkansas    South   2286435     30.6 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format state %-14s // 数表示位数，s表示类型，-左对齐，没-表示右对齐
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c TRC}
+     {c |} {res}state      region       pop   medage {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c RT}
+  1. {c |} {res}Alabama     South   3893888     29.3 {txt}{c |}
+  2. {c |} {res}Alaska       West    401851     26.1 {txt}{c |}
+  3. {c |} {res}Arizona      West   2718215     29.2 {txt}{c |}
+  4. {c |} {res}Arkansas    South   2286435     30.6 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 9}{c -}{hline 8}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format region %-8.0g
+{txt}
+{com}. format pop %11.0gc //后面加个c表示分位符，comma
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c TRC}
+     {c |} {res}state      region         pop   medage {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format medage %8.1f
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c TRC}
+     {c |} {res}state      region         pop   medage {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen id=_n //生成一个新变量id，取值依次为1，2，3
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. replace id=9842 in 3
+{txt}(1 real change made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c TRC}
+     {c |} {res}state      region         pop   medage     id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3      1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1      2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6      4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. format id %05.0f
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c TRC}
+     {c |} {res}state      region         pop   medage      id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3   00001 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1   00002 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   09842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6   00004 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c BRC}
+
+{com}. drop id
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. 
+. gen id=_n //生成一个新变量id，取值依次为1，2，3
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. replace id=9842 in 3
+{txt}(1 real change made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. list
+{txt}
+     {c TLC}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c TRC}
+     {c |} {res}state           region          pop   medage     id {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  1. {c |} {res}Alabama         South     3,893,888     29.3      1 {txt}{c |}
+  2. {c |} {res}Alaska          West        401,851     26.1      2 {txt}{c |}
+  3. {c |} {res}Arizona         West      2,718,215     29.2   9842 {txt}{c |}
+  4. {c |} {res}Arkansas        South     2,286,435     30.6      4 {txt}{c |}
+  5. {c |} {res}California      West       23667902     29.9      5 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  6. {c |} {res}Colorado        West      2,889,964     28.6      6 {txt}{c |}
+  7. {c |} {res}Connecticut     NE        3,107,576     32.0      7 {txt}{c |}
+  8. {c |} {res}Delaware        South       594,338     29.8      8 {txt}{c |}
+  9. {c |} {res}Florida         South     9,746,324     34.7      9 {txt}{c |}
+ 10. {c |} {res}Georgia         South     5,463,105     28.7     10 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 11. {c |} {res}Hawaii          West        964,691     28.4     11 {txt}{c |}
+ 12. {c |} {res}Idaho           West        943,935     27.6     12 {txt}{c |}
+ 13. {c |} {res}Illinois        N Cntrl    11426518     29.9     13 {txt}{c |}
+ 14. {c |} {res}Indiana         N Cntrl   5,490,224     29.2     14 {txt}{c |}
+ 15. {c |} {res}Iowa            N Cntrl   2,913,808     30.0     15 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 16. {c |} {res}Kansas          N Cntrl   2,363,679     30.1     16 {txt}{c |}
+ 17. {c |} {res}Kentucky        South     3,660,777     29.1     17 {txt}{c |}
+ 18. {c |} {res}Louisiana       South     4,205,900     27.4     18 {txt}{c |}
+ 19. {c |} {res}Maine           NE        1,124,660     30.4     19 {txt}{c |}
+ 20. {c |} {res}Maryland        South     4,216,975     30.3     20 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 21. {c |} {res}Massachusetts   NE        5,737,037     31.2     21 {txt}{c |}
+ 22. {c |} {res}Michigan        N Cntrl   9,262,078     28.8     22 {txt}{c |}
+ 23. {c |} {res}Minnesota       N Cntrl   4,075,970     29.2     23 {txt}{c |}
+ 24. {c |} {res}Mississippi     South     2,520,638     27.7     24 {txt}{c |}
+ 25. {c |} {res}Missouri        N Cntrl   4,916,686     30.9     25 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 26. {c |} {res}Montana         West        786,690     29.0     26 {txt}{c |}
+ 27. {c |} {res}Nebraska        N Cntrl   1,569,825     29.7     27 {txt}{c |}
+ 28. {c |} {res}Nevada          West        800,493     30.2     28 {txt}{c |}
+ 29. {c |} {res}New Hampshire   NE          920,610     30.1     29 {txt}{c |}
+ 30. {c |} {res}New Jersey      NE        7,364,823     32.2     30 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 31. {c |} {res}New Mexico      West      1,302,894     27.4     31 {txt}{c |}
+ 32. {c |} {res}New York        NE         17558072     31.9     32 {txt}{c |}
+ 33. {c |} {res}N. Carolina     South     5,881,766     29.6     33 {txt}{c |}
+ 34. {c |} {res}N. Dakota       N Cntrl     652,717     28.3     34 {txt}{c |}
+ 35. {c |} {res}Ohio            N Cntrl    10797630     29.9     35 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 36. {c |} {res}Oklahoma        South     3,025,290     30.1     36 {txt}{c |}
+ 37. {c |} {res}Oregon          West      2,633,105     30.2     37 {txt}{c |}
+ 38. {c |} {res}Pennsylvania    NE         11863895     32.1     38 {txt}{c |}
+ 39. {c |} {res}Rhode Island    NE          947,154     31.8     39 {txt}{c |}
+ 40. {c |} {res}S. Carolina     South     3,121,820     28.1     40 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 41. {c |} {res}S. Dakota       N Cntrl     690,768     28.9     41 {txt}{c |}
+ 42. {c |} {res}Tennessee       South     4,591,120     30.1     42 {txt}{c |}
+ 43. {c |} {res}Texas           South      14229191     28.2     43 {txt}{c |}
+ 44. {c |} {res}Utah            West      1,461,037     24.2     44 {txt}{c |}
+ 45. {c |} {res}Vermont         NE          511,456     29.4     45 {txt}{c |}
+     {c LT}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+ 46. {c |} {res}Virginia        South     5,346,818     29.8     46 {txt}{c |}
+ 47. {c |} {res}Washington      West      4,132,156     29.8     47 {txt}{c |}
+ 48. {c |} {res}W. Virginia     South     1,949,644     30.4     48 {txt}{c |}
+ 49. {c |} {res}Wisconsin       N Cntrl   4,705,767     29.4     49 {txt}{c |}
+ 50. {c |} {res}Wyoming         West        469,557     27.1     50 {txt}{c |}
+     {c BLC}{hline 15}{c -}{hline 9}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/census10.dta
+{txt}  obs:{res}            50                          1980 Census
+                                                data by state
+{txt} vars:{res}             5                          9 Apr 2016 08:05
+{txt} size:{res}         1,400                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:state          }{txt}{bind: str14   }{bind:{txt}%-14s     }{space 1}{bind:         }{bind:  }{res}{res}State{p_end}
+{p 0 48}{bind:region         }{txt}{bind: int     }{bind:{txt}%-8.0g    }{space 1}{bind:cenreg   }{bind:  }{res}{res}Census region{p_end}
+{p 0 48}{bind:pop            }{txt}{bind: long    }{bind:{txt}%11.0gc   }{space 1}{bind:         }{bind:  }{res}{res}Population{p_end}
+{p 0 48}{bind:medage         }{txt}{bind: float   }{bind:{txt}%8.1f     }{space 1}{bind:         }{bind:  }{res}{res}Median age{p_end}
+{p 0 48}{bind:id             }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. format id %5.0g
+
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c TRC}
+     {c |} {res}state      region         pop   medage        id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3         1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1         2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9.8e+03 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6         4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c BRC}
+
+{com}. format id %6.0g
+
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c TRC}
+     {c |} {res}state      region         pop   medage     id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3      1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1      2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6      4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. format id %6.0f
+
+. 
+. 
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c TRC}
+     {c |} {res}state      region         pop   medage     id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3      1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1      2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6      4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. format id %5.0f
+
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c TRC}
+     {c |} {res}state      region         pop   medage     id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3      1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1      2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6      4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. format id %5.0g
+
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c TRC}
+     {c |} {res}state      region         pop   medage        id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3         1 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1         2 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   9.8e+03 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6         4 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 9}{c BRC}
+
+{com}. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/census10.dta
+{txt}  obs:{res}            50                          1980 Census
+                                                data by state
+{txt} vars:{res}             5                          9 Apr 2016 08:05
+{txt} size:{res}         1,400                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:state          }{txt}{bind: str14   }{bind:{txt}%-14s     }{space 1}{bind:         }{bind:  }{res}{res}State{p_end}
+{p 0 48}{bind:region         }{txt}{bind: int     }{bind:{txt}%-8.0g    }{space 1}{bind:cenreg   }{bind:  }{res}{res}Census region{p_end}
+{p 0 48}{bind:pop            }{txt}{bind: long    }{bind:{txt}%11.0gc   }{space 1}{bind:         }{bind:  }{res}{res}Population{p_end}
+{p 0 48}{bind:medage         }{txt}{bind: float   }{bind:{txt}%8.1f     }{space 1}{bind:         }{bind:  }{res}{res}Median age{p_end}
+{p 0 48}{bind:id             }{txt}{bind: float   }{bind:{txt}%5.0g     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}. format id %5.0f
+
+. d
+
+{txt}Contains data from {res}http://www.stata-press.com/data/r15/census10.dta
+{txt}  obs:{res}            50                          1980 Census
+                                                data by state
+{txt} vars:{res}             5                          9 Apr 2016 08:05
+{txt} size:{res}         1,400                          
+{txt}{hline}
+              storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:state          }{txt}{bind: str14   }{bind:{txt}%-14s     }{space 1}{bind:         }{bind:  }{res}{res}State{p_end}
+{p 0 48}{bind:region         }{txt}{bind: int     }{bind:{txt}%-8.0g    }{space 1}{bind:cenreg   }{bind:  }{res}{res}Census region{p_end}
+{p 0 48}{bind:pop            }{txt}{bind: long    }{bind:{txt}%11.0gc   }{space 1}{bind:         }{bind:  }{res}{res}Population{p_end}
+{p 0 48}{bind:medage         }{txt}{bind: float   }{bind:{txt}%8.1f     }{space 1}{bind:         }{bind:  }{res}{res}Median age{p_end}
+{p 0 48}{bind:id             }{txt}{bind: float   }{bind:{txt}%5.0f     }{space 1}{bind:         }{bind:  }{res}{res}{p_end}
+{txt}{hline}
+Sorted by: 
+{res}     Note: Dataset has changed since last saved.
+
+{com}.  format id %5f
+{err}invalid %format
+{txt}{search r(120), local:r(120);}
+
+{com}.  format id %05.0f
+
+. list in 1/4
+{txt}
+     {c TLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c TRC}
+     {c |} {res}state      region         pop   medage      id {txt}{c |}
+     {c LT}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c RT}
+  1. {c |} {res}Alabama    South    3,893,888     29.3   00001 {txt}{c |}
+  2. {c |} {res}Alaska     West       401,851     26.1   00002 {txt}{c |}
+  3. {c |} {res}Arizona    West     2,718,215     29.2   09842 {txt}{c |}
+  4. {c |} {res}Arkansas   South    2,286,435     30.6   00004 {txt}{c |}
+     {c BLC}{hline 10}{c -}{hline 8}{c -}{hline 11}{c -}{hline 8}{c -}{hline 7}{c BRC}
+
+{com}. pwd
+{res}E:\git\stata\logfile
+
+{com}. log
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}E:\git\stata\logfile\20171221.smcl, on
+  {txt}log type:  {res}smcl
+
+{com}. help log
+
+. cmdlog
+{txt}(closed)
+
+{com}. cmdlog
+{txt}(closed)
+
+{com}. log
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}E:\git\stata\logfile\20171221.smcl, on
+  {txt}log type:  {res}smcl
+
+{com}. clear
+
+. exit, clear

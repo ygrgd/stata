@@ -53,4 +53,104 @@ input score	num
 641 	 29
 640 	 38
 end
+sum score
+sum score [weight=num] /*加权计算，比较该结果与sum score 的区别，
+实际上，不用权重选项时，相当于权重相等。*/
+
+*****2.9 其他可选项,options
+sum score, detail //可以简写为d，显示百分位数，最小最大5个数
+sysuse auto, clear
+list price in 1/30, sep(10) //每10 个观察值之间加一横线
+list price in 10/30, sep(2) //每2 个观察值之间加一横线
+list price, nohead //不要表头
+
+*****3.1.2 从网络获取数据
+webuse nlswork, clear //与前一命令等价，从STATA 官方数据库获取数据
+
+*****3.2.1 数值变量：
+clear
+set obs 1 //将设定一个观察值
+gen a=1 //生成一个新变量a,令a 取值为1
+d /*d 为describ 命令的略写，describ 命令显示数据集的
+属性信息，注意观察显示结果中，a 的storage type 为float 型，
+浮点型为默认类型*/
+. compress //在不损害信息的基础上压缩，使数据占用空间尽可能小
+replace a=101 /* 注意a 的storage type 现在自动升为int 型，
+因为byte 最大只能为100*/
+. replace a=100
+. compress
+. d //重新变回到byte 型
+. replace a=32741 //直接变到long 型,因为int 型最大只能到32740
+. gen double b=1 //直接生成双精度变量b
+. recast  double a //将a 变成双精度变量b
+. d //注意到a 和b 均为双精度型
+
+******3.2 数据类型**************************************************
+
+webuse nlswork, clear
+mvencode age,mv(-9996) //把缺失值转换成-9996
+. mvdecode age,mv(-9996) //把-9996转换成空值
+
+******3.3 数据类型转化
+webuse destring1, clear
+d //10个观测值，5个变了，全为字符
+destring, replace //全部转换为数值型，replace 表示将原来的变量（值）更新
+d
+
+将字符型数据转换为数值型数据：去掉字符间的空格--
+
+webuse destring2, clear
+des //注意到所有的变量均为字符型 str,日期有空格，金额有美元符号，p有百分号
+list date //注意到date 年月日之间均有空格
+destring date, replace ///*由于含有非数值型字符
+（即空格），因此没有更新，也即转换命令没有执行。*/
+destring date, replace ignore(“ ”)
+des //注意到date 的storage type 已变为long
+list date //注意到空格消失了
+destring price percent, gen(price2 percent2) ignore(“$ ,%”)
+
+destring price,replace ignore("$")  //没有成功
+destring percent,replace ignore("%") //成功
+
+*******3.3.2 数值型转化为字符型：tostring
+webuse tostring,clear 
+des //注意到month 为字符型，而年和日为数值型
+list
+tostring year day, replace //将年和日转化为字符型
+gen date1=month+"/"+day+"/"+year
+gen date2=date(date1,"MDY") // date（）为日期函数，注意大小写
+list //新生成的date2 表示总天数
+format date2 %tddmy 
+gen a=string(s1, "%12.0f") 如果格式不对，可以用这个办法转换
+di date("1975/12/27","ymd") /*小游戏：请算算你活了多少天？示例：一个生于1975 年12 月27 日的家伙，
+他活了？*/
+
+
+
+*****3.4 数据显示格式:format
+webuse census10,clear
+format state %-14s // 数表示位数，s表示类型，-左对齐，没-表示右对齐
+format region %-8.0g
+format pop %11.0gc //后面加个c表示分位符，comma
+format medage %8.1f //8.1表示8位数，1位小数
+
+
+
+gen id=_n //生成一个新变量id，取值依次为1，2，3
+replace id=9842 in 3
+format id %5.0f  //正常显示
+
+format id %05.0f //05表示，5位数，补足的前面用0补全
+ 
+
+
+
+
+
+
+
+
+
+
+
 
