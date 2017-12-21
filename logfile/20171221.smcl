@@ -1,0 +1,786 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}E:\git\stata\logfile\20171221.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}21 Dec 2017, 11:39:48
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sort p
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. by f:sum p w //以foreign排序，对price和weight求和
+{err}not sorted
+{txt}{search r(5), local:r(5);}
+
+end of do-file
+
+{search r(5), local:r(5);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sort price
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. by f:sum p w //以foreign排序，对price和weight求和
+{err}not sorted
+{txt}{search r(5), local:r(5);}
+
+end of do-file
+
+{search r(5), local:r(5);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sort f
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. by f:sum p w
+
+{txt}{hline}
+-> foreign = Domestic
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 7}price {c |}{res}         52    6072.423    3097.104       3291      15906
+{txt}{space 6}weight {c |}{res}         52    3317.115    695.3637       1800       4840
+
+{txt}{hline}
+-> foreign = Foreign
+
+    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 7}price {c |}{res}         22    6384.682    2621.915       3748      12990
+{txt}{space 6}weight {c |}{res}         22    2315.909    433.0035       1760       3420
+
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. sort p
+
+. edit
+
+. sort -p
+{err}- invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. sort - p
+{err}- invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. sort- p
+{err}- invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. sort - price
+{err}- invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. help sort
+
+. sort -price
+{err}- invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. gsort -p
+
+. edit
+
+. help gsort
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sort foreign -price
+{err}variables out of order
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gsort foreign -price
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. gsort foreign price
+
+. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. gen nprice = price + 10
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list p np
+{txt}
+     {c TLC}{hline 8}{c -}{hline 8}{c TRC}
+     {c |} {res} price   nprice {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+  1. {c |} {res} 3,291     3301 {txt}{c |}
+  2. {c |} {res} 3,299     3309 {txt}{c |}
+  3. {c |} {res} 3,667     3677 {txt}{c |}
+  4. {c |} {res} 3,799     3809 {txt}{c |}
+  5. {c |} {res} 3,829     3839 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+  6. {c |} {res} 3,955     3965 {txt}{c |}
+  7. {c |} {res} 3,984     3994 {txt}{c |}
+  8. {c |} {res} 4,010     4020 {txt}{c |}
+  9. {c |} {res} 4,060     4070 {txt}{c |}
+ 10. {c |} {res} 4,082     4092 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 11. {c |} {res} 4,099     4109 {txt}{c |}
+ 12. {c |} {res} 4,172     4182 {txt}{c |}
+ 13. {c |} {res} 4,181     4191 {txt}{c |}
+ 14. {c |} {res} 4,187     4197 {txt}{c |}
+ 15. {c |} {res} 4,195     4205 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 16. {c |} {res} 4,389     4399 {txt}{c |}
+ 17. {c |} {res} 4,424     4434 {txt}{c |}
+ 18. {c |} {res} 4,425     4435 {txt}{c |}
+ 19. {c |} {res} 4,453     4463 {txt}{c |}
+ 20. {c |} {res} 4,482     4492 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 21. {c |} {res} 4,504     4514 {txt}{c |}
+ 22. {c |} {res} 4,516     4526 {txt}{c |}
+ 23. {c |} {res} 4,647     4657 {txt}{c |}
+ 24. {c |} {res} 4,723     4733 {txt}{c |}
+ 25. {c |} {res} 4,733     4743 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 26. {c |} {res} 4,749     4759 {txt}{c |}
+ 27. {c |} {res} 4,816     4826 {txt}{c |}
+ 28. {c |} {res} 4,890     4900 {txt}{c |}
+ 29. {c |} {res} 4,934     4944 {txt}{c |}
+ 30. {c |} {res} 5,104     5114 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 31. {c |} {res} 5,172     5182 {txt}{c |}
+ 32. {c |} {res} 5,189     5199 {txt}{c |}
+ 33. {c |} {res} 5,222     5232 {txt}{c |}
+ 34. {c |} {res} 5,379     5389 {txt}{c |}
+ 35. {c |} {res} 5,705     5715 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 36. {c |} {res} 5,788     5798 {txt}{c |}
+ 37. {c |} {res} 5,798     5808 {txt}{c |}
+ 38. {c |} {res} 5,886     5896 {txt}{c |}
+ 39. {c |} {res} 6,165     6175 {txt}{c |}
+ 40. {c |} {res} 6,303     6313 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 41. {c |} {res} 6,342     6352 {txt}{c |}
+ 42. {c |} {res} 6,486     6496 {txt}{c |}
+ 43. {c |} {res} 7,827     7837 {txt}{c |}
+ 44. {c |} {res} 8,814     8824 {txt}{c |}
+ 45. {c |} {res}10,371    10381 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 46. {c |} {res}10,372    10382 {txt}{c |}
+ 47. {c |} {res}11,385    11395 {txt}{c |}
+ 48. {c |} {res}11,497    11507 {txt}{c |}
+ 49. {c |} {res}13,466    13476 {txt}{c |}
+ 50. {c |} {res}13,594    13604 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 51. {c |} {res}14,500    14510 {txt}{c |}
+ 52. {c |} {res}15,906    15916 {txt}{c |}
+ 53. {c |} {res} 3,748     3758 {txt}{c |}
+ 54. {c |} {res} 3,798     3808 {txt}{c |}
+ 55. {c |} {res} 3,895     3905 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 56. {c |} {res} 3,995     4005 {txt}{c |}
+ 57. {c |} {res} 4,296     4306 {txt}{c |}
+ 58. {c |} {res} 4,499     4509 {txt}{c |}
+ 59. {c |} {res} 4,589     4599 {txt}{c |}
+ 60. {c |} {res} 4,697     4707 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 61. {c |} {res} 5,079     5089 {txt}{c |}
+ 62. {c |} {res} 5,397     5407 {txt}{c |}
+ 63. {c |} {res} 5,719     5729 {txt}{c |}
+ 64. {c |} {res} 5,799     5809 {txt}{c |}
+ 65. {c |} {res} 5,899     5909 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 66. {c |} {res} 6,229     6239 {txt}{c |}
+ 67. {c |} {res} 6,295     6305 {txt}{c |}
+ 68. {c |} {res} 6,850     6860 {txt}{c |}
+ 69. {c |} {res} 7,140     7150 {txt}{c |}
+ 70. {c |} {res} 8,129     8139 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 71. {c |} {res} 9,690     9700 {txt}{c |}
+ 72. {c |} {res} 9,735     9745 {txt}{c |}
+ 73. {c |} {res}11,995    12005 {txt}{c |}
+ 74. {c |} {res}12,990    13000 {txt}{c |}
+     {c BLC}{hline 8}{c -}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. replace nprice = nprice - 10
+{txt}(74 real changes made)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list p np
+{txt}
+     {c TLC}{hline 8}{c -}{hline 8}{c TRC}
+     {c |} {res} price   nprice {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+  1. {c |} {res} 3,291     3291 {txt}{c |}
+  2. {c |} {res} 3,299     3299 {txt}{c |}
+  3. {c |} {res} 3,667     3667 {txt}{c |}
+  4. {c |} {res} 3,799     3799 {txt}{c |}
+  5. {c |} {res} 3,829     3829 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+  6. {c |} {res} 3,955     3955 {txt}{c |}
+  7. {c |} {res} 3,984     3984 {txt}{c |}
+  8. {c |} {res} 4,010     4010 {txt}{c |}
+  9. {c |} {res} 4,060     4060 {txt}{c |}
+ 10. {c |} {res} 4,082     4082 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 11. {c |} {res} 4,099     4099 {txt}{c |}
+ 12. {c |} {res} 4,172     4172 {txt}{c |}
+ 13. {c |} {res} 4,181     4181 {txt}{c |}
+ 14. {c |} {res} 4,187     4187 {txt}{c |}
+ 15. {c |} {res} 4,195     4195 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 16. {c |} {res} 4,389     4389 {txt}{c |}
+ 17. {c |} {res} 4,424     4424 {txt}{c |}
+ 18. {c |} {res} 4,425     4425 {txt}{c |}
+ 19. {c |} {res} 4,453     4453 {txt}{c |}
+ 20. {c |} {res} 4,482     4482 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 21. {c |} {res} 4,504     4504 {txt}{c |}
+ 22. {c |} {res} 4,516     4516 {txt}{c |}
+ 23. {c |} {res} 4,647     4647 {txt}{c |}
+ 24. {c |} {res} 4,723     4723 {txt}{c |}
+ 25. {c |} {res} 4,733     4733 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 26. {c |} {res} 4,749     4749 {txt}{c |}
+ 27. {c |} {res} 4,816     4816 {txt}{c |}
+ 28. {c |} {res} 4,890     4890 {txt}{c |}
+ 29. {c |} {res} 4,934     4934 {txt}{c |}
+ 30. {c |} {res} 5,104     5104 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 31. {c |} {res} 5,172     5172 {txt}{c |}
+ 32. {c |} {res} 5,189     5189 {txt}{c |}
+ 33. {c |} {res} 5,222     5222 {txt}{c |}
+ 34. {c |} {res} 5,379     5379 {txt}{c |}
+ 35. {c |} {res} 5,705     5705 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 36. {c |} {res} 5,788     5788 {txt}{c |}
+ 37. {c |} {res} 5,798     5798 {txt}{c |}
+ 38. {c |} {res} 5,886     5886 {txt}{c |}
+ 39. {c |} {res} 6,165     6165 {txt}{c |}
+ 40. {c |} {res} 6,303     6303 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 41. {c |} {res} 6,342     6342 {txt}{c |}
+ 42. {c |} {res} 6,486     6486 {txt}{c |}
+ 43. {c |} {res} 7,827     7827 {txt}{c |}
+ 44. {c |} {res} 8,814     8814 {txt}{c |}
+ 45. {c |} {res}10,371    10371 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 46. {c |} {res}10,372    10372 {txt}{c |}
+ 47. {c |} {res}11,385    11385 {txt}{c |}
+ 48. {c |} {res}11,497    11497 {txt}{c |}
+ 49. {c |} {res}13,466    13466 {txt}{c |}
+ 50. {c |} {res}13,594    13594 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 51. {c |} {res}14,500    14500 {txt}{c |}
+ 52. {c |} {res}15,906    15906 {txt}{c |}
+ 53. {c |} {res} 3,748     3748 {txt}{c |}
+ 54. {c |} {res} 3,798     3798 {txt}{c |}
+ 55. {c |} {res} 3,895     3895 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 56. {c |} {res} 3,995     3995 {txt}{c |}
+ 57. {c |} {res} 4,296     4296 {txt}{c |}
+ 58. {c |} {res} 4,499     4499 {txt}{c |}
+ 59. {c |} {res} 4,589     4589 {txt}{c |}
+ 60. {c |} {res} 4,697     4697 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 61. {c |} {res} 5,079     5079 {txt}{c |}
+ 62. {c |} {res} 5,397     5397 {txt}{c |}
+ 63. {c |} {res} 5,719     5719 {txt}{c |}
+ 64. {c |} {res} 5,799     5799 {txt}{c |}
+ 65. {c |} {res} 5,899     5899 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 66. {c |} {res} 6,229     6229 {txt}{c |}
+ 67. {c |} {res} 6,295     6295 {txt}{c |}
+ 68. {c |} {res} 6,850     6850 {txt}{c |}
+ 69. {c |} {res} 7,140     7140 {txt}{c |}
+ 70. {c |} {res} 8,129     8129 {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 8}{c RT}
+ 71. {c |} {res} 9,690     9690 {txt}{c |}
+ 72. {c |} {res} 9,735     9735 {txt}{c |}
+ 73. {c |} {res}11,995    11995 {txt}{c |}
+ 74. {c |} {res}12,990    12990 {txt}{c |}
+     {c BLC}{hline 8}{c -}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list price if foreign==0
+{txt}
+     {c TLC}{hline 8}{c TRC}
+     {c |} {res} price {txt}{c |}
+     {c LT}{hline 8}{c RT}
+  1. {c |} {res} 3,291 {txt}{c |}
+  2. {c |} {res} 3,299 {txt}{c |}
+  3. {c |} {res} 3,667 {txt}{c |}
+  4. {c |} {res} 3,799 {txt}{c |}
+  5. {c |} {res} 3,829 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+  6. {c |} {res} 3,955 {txt}{c |}
+  7. {c |} {res} 3,984 {txt}{c |}
+  8. {c |} {res} 4,010 {txt}{c |}
+  9. {c |} {res} 4,060 {txt}{c |}
+ 10. {c |} {res} 4,082 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 11. {c |} {res} 4,099 {txt}{c |}
+ 12. {c |} {res} 4,172 {txt}{c |}
+ 13. {c |} {res} 4,181 {txt}{c |}
+ 14. {c |} {res} 4,187 {txt}{c |}
+ 15. {c |} {res} 4,195 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 16. {c |} {res} 4,389 {txt}{c |}
+ 17. {c |} {res} 4,424 {txt}{c |}
+ 18. {c |} {res} 4,425 {txt}{c |}
+ 19. {c |} {res} 4,453 {txt}{c |}
+ 20. {c |} {res} 4,482 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 21. {c |} {res} 4,504 {txt}{c |}
+ 22. {c |} {res} 4,516 {txt}{c |}
+ 23. {c |} {res} 4,647 {txt}{c |}
+ 24. {c |} {res} 4,723 {txt}{c |}
+ 25. {c |} {res} 4,733 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 26. {c |} {res} 4,749 {txt}{c |}
+ 27. {c |} {res} 4,816 {txt}{c |}
+ 28. {c |} {res} 4,890 {txt}{c |}
+ 29. {c |} {res} 4,934 {txt}{c |}
+ 30. {c |} {res} 5,104 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 31. {c |} {res} 5,172 {txt}{c |}
+ 32. {c |} {res} 5,189 {txt}{c |}
+ 33. {c |} {res} 5,222 {txt}{c |}
+ 34. {c |} {res} 5,379 {txt}{c |}
+ 35. {c |} {res} 5,705 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 36. {c |} {res} 5,788 {txt}{c |}
+ 37. {c |} {res} 5,798 {txt}{c |}
+ 38. {c |} {res} 5,886 {txt}{c |}
+ 39. {c |} {res} 6,165 {txt}{c |}
+ 40. {c |} {res} 6,303 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 41. {c |} {res} 6,342 {txt}{c |}
+ 42. {c |} {res} 6,486 {txt}{c |}
+ 43. {c |} {res} 7,827 {txt}{c |}
+ 44. {c |} {res} 8,814 {txt}{c |}
+ 45. {c |} {res}10,371 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 46. {c |} {res}10,372 {txt}{c |}
+ 47. {c |} {res}11,385 {txt}{c |}
+ 48. {c |} {res}11,497 {txt}{c |}
+ 49. {c |} {res}13,466 {txt}{c |}
+ 50. {c |} {res}13,594 {txt}{c |}
+     {c LT}{hline 8}{c RT}
+ 51. {c |} {res}14,500 {txt}{c |}
+ 52. {c |} {res}15,906 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list make price if foreign==0
+{txt}
+     {c TLC}{hline 19}{c -}{hline 8}{c TRC}
+     {c |} {res}make                 price {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+  1. {c |} {res}Merc. Zephyr         3,291 {txt}{c |}
+  2. {c |} {res}Chev. Chevette       3,299 {txt}{c |}
+  3. {c |} {res}Chev. Monza          3,667 {txt}{c |}
+  4. {c |} {res}AMC Spirit           3,799 {txt}{c |}
+  5. {c |} {res}Merc. Bobcat         3,829 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+  6. {c |} {res}Chev. Nova           3,955 {txt}{c |}
+  7. {c |} {res}Dodge Colt           3,984 {txt}{c |}
+  8. {c |} {res}Dodge Diplomat       4,010 {txt}{c |}
+  9. {c |} {res}Plym. Volare         4,060 {txt}{c |}
+ 10. {c |} {res}Buick Skylark        4,082 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 11. {c |} {res}AMC Concord          4,099 {txt}{c |}
+ 12. {c |} {res}Pont. Sunbird        4,172 {txt}{c |}
+ 13. {c |} {res}Olds Omega           4,181 {txt}{c |}
+ 14. {c |} {res}Ford Mustang         4,187 {txt}{c |}
+ 15. {c |} {res}Olds Starfire        4,195 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 16. {c |} {res}Ford Fiesta          4,389 {txt}{c |}
+ 17. {c |} {res}Pont. Phoenix        4,424 {txt}{c |}
+ 18. {c |} {res}Plym. Champ          4,425 {txt}{c |}
+ 19. {c |} {res}Buick Opel           4,453 {txt}{c |}
+ 20. {c |} {res}Plym. Horizon        4,482 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 21. {c |} {res}Chev. Malibu         4,504 {txt}{c |}
+ 22. {c |} {res}Merc. Monarch        4,516 {txt}{c |}
+ 23. {c |} {res}Plym. Arrow          4,647 {txt}{c |}
+ 24. {c |} {res}Pont. Le Mans        4,723 {txt}{c |}
+ 25. {c |} {res}Olds Cutlass         4,733 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 26. {c |} {res}AMC Pacer            4,749 {txt}{c |}
+ 27. {c |} {res}Buick Century        4,816 {txt}{c |}
+ 28. {c |} {res}Olds Delta 88        4,890 {txt}{c |}
+ 29. {c |} {res}Pont. Firebird       4,934 {txt}{c |}
+ 30. {c |} {res}Chev. Monte Carlo    5,104 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 31. {c |} {res}Olds Cutl Supr       5,172 {txt}{c |}
+ 32. {c |} {res}Buick Regal          5,189 {txt}{c |}
+ 33. {c |} {res}Pont. Grand Prix     5,222 {txt}{c |}
+ 34. {c |} {res}Merc. Cougar         5,379 {txt}{c |}
+ 35. {c |} {res}Chev. Impala         5,705 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 36. {c |} {res}Buick LeSabre        5,788 {txt}{c |}
+ 37. {c |} {res}Pont. Catalina       5,798 {txt}{c |}
+ 38. {c |} {res}Dodge Magnum         5,886 {txt}{c |}
+ 39. {c |} {res}Merc. Marquis        6,165 {txt}{c |}
+ 40. {c |} {res}Merc. XR-7           6,303 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 41. {c |} {res}Dodge St. Regis      6,342 {txt}{c |}
+ 42. {c |} {res}Plym. Sapporo        6,486 {txt}{c |}
+ 43. {c |} {res}Buick Electra        7,827 {txt}{c |}
+ 44. {c |} {res}Olds 98              8,814 {txt}{c |}
+ 45. {c |} {res}Olds Toronado       10,371 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 46. {c |} {res}Buick Riviera       10,372 {txt}{c |}
+ 47. {c |} {res}Cad. Deville        11,385 {txt}{c |}
+ 48. {c |} {res}Linc. Continental   11,497 {txt}{c |}
+ 49. {c |} {res}Linc. Versailles    13,466 {txt}{c |}
+ 50. {c |} {res}Linc. Mark V        13,594 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 51. {c |} {res}Cad. Eldorado       14,500 {txt}{c |}
+ 52. {c |} {res}Cad. Seville        15,906 {txt}{c |}
+     {c BLC}{hline 19}{c -}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list make price if foreign==1 & price>10000
+{txt}
+     {c TLC}{hline 13}{c -}{hline 8}{c TRC}
+     {c |} {res}make           price {txt}{c |}
+     {c LT}{hline 13}{c -}{hline 8}{c RT}
+ 73. {c |} {res}Volvo 260     11,995 {txt}{c |}
+ 74. {c |} {res}Peugeot 604   12,990 {txt}{c |}
+     {c BLC}{hline 13}{c -}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list make price if foreign==1 | price>10000
+{txt}
+     {c TLC}{hline 19}{c -}{hline 8}{c TRC}
+     {c |} {res}make                 price {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 45. {c |} {res}Olds Toronado       10,371 {txt}{c |}
+ 46. {c |} {res}Buick Riviera       10,372 {txt}{c |}
+ 47. {c |} {res}Cad. Deville        11,385 {txt}{c |}
+ 48. {c |} {res}Linc. Continental   11,497 {txt}{c |}
+ 49. {c |} {res}Linc. Versailles    13,466 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 50. {c |} {res}Linc. Mark V        13,594 {txt}{c |}
+ 51. {c |} {res}Cad. Eldorado       14,500 {txt}{c |}
+ 52. {c |} {res}Cad. Seville        15,906 {txt}{c |}
+ 53. {c |} {res}Toyota Corolla       3,748 {txt}{c |}
+ 54. {c |} {res}Subaru               3,798 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 55. {c |} {res}Renault Le Car       3,895 {txt}{c |}
+ 56. {c |} {res}Mazda GLC            3,995 {txt}{c |}
+ 57. {c |} {res}Fiat Strada          4,296 {txt}{c |}
+ 58. {c |} {res}Honda Civic          4,499 {txt}{c |}
+ 59. {c |} {res}Datsun 210           4,589 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 60. {c |} {res}VW Rabbit            4,697 {txt}{c |}
+ 61. {c |} {res}Datsun 510           5,079 {txt}{c |}
+ 62. {c |} {res}VW Diesel            5,397 {txt}{c |}
+ 63. {c |} {res}Toyota Corona        5,719 {txt}{c |}
+ 64. {c |} {res}Honda Accord         5,799 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 65. {c |} {res}Toyota Celica        5,899 {txt}{c |}
+ 66. {c |} {res}Datsun 200           6,229 {txt}{c |}
+ 67. {c |} {res}Audi Fox             6,295 {txt}{c |}
+ 68. {c |} {res}VW Scirocco          6,850 {txt}{c |}
+ 69. {c |} {res}VW Dasher            7,140 {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c RT}
+ 70. {c |} {res}Datsun 810           8,129 {txt}{c |}
+ 71. {c |} {res}Audi 5000            9,690 {txt}{c |}
+ 72. {c |} {res}BMW 320i             9,735 {txt}{c |}
+ 73. {c |} {res}Volvo 260           11,995 {txt}{c |}
+ 74. {c |} {res}Peugeot 604         12,990 {txt}{c |}
+     {c BLC}{hline 19}{c -}{hline 8}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. list make price foreign if foreign==1 | price>10000
+{txt}
+     {c TLC}{hline 19}{c -}{hline 8}{c -}{hline 10}{c TRC}
+     {c |} {res}make                 price    foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 45. {c |} {res}Olds Toronado       10,371   Domestic {txt}{c |}
+ 46. {c |} {res}Buick Riviera       10,372   Domestic {txt}{c |}
+ 47. {c |} {res}Cad. Deville        11,385   Domestic {txt}{c |}
+ 48. {c |} {res}Linc. Continental   11,497   Domestic {txt}{c |}
+ 49. {c |} {res}Linc. Versailles    13,466   Domestic {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 50. {c |} {res}Linc. Mark V        13,594   Domestic {txt}{c |}
+ 51. {c |} {res}Cad. Eldorado       14,500   Domestic {txt}{c |}
+ 52. {c |} {res}Cad. Seville        15,906   Domestic {txt}{c |}
+ 53. {c |} {res}Toyota Corolla       3,748    Foreign {txt}{c |}
+ 54. {c |} {res}Subaru               3,798    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 55. {c |} {res}Renault Le Car       3,895    Foreign {txt}{c |}
+ 56. {c |} {res}Mazda GLC            3,995    Foreign {txt}{c |}
+ 57. {c |} {res}Fiat Strada          4,296    Foreign {txt}{c |}
+ 58. {c |} {res}Honda Civic          4,499    Foreign {txt}{c |}
+ 59. {c |} {res}Datsun 210           4,589    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 60. {c |} {res}VW Rabbit            4,697    Foreign {txt}{c |}
+ 61. {c |} {res}Datsun 510           5,079    Foreign {txt}{c |}
+ 62. {c |} {res}VW Diesel            5,397    Foreign {txt}{c |}
+ 63. {c |} {res}Toyota Corona        5,719    Foreign {txt}{c |}
+ 64. {c |} {res}Honda Accord         5,799    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 65. {c |} {res}Toyota Celica        5,899    Foreign {txt}{c |}
+ 66. {c |} {res}Datsun 200           6,229    Foreign {txt}{c |}
+ 67. {c |} {res}Audi Fox             6,295    Foreign {txt}{c |}
+ 68. {c |} {res}VW Scirocco          6,850    Foreign {txt}{c |}
+ 69. {c |} {res}VW Dasher            7,140    Foreign {txt}{c |}
+     {c LT}{hline 19}{c -}{hline 8}{c -}{hline 10}{c RT}
+ 70. {c |} {res}Datsun 810           8,129    Foreign {txt}{c |}
+ 71. {c |} {res}Audi 5000            9,690    Foreign {txt}{c |}
+ 72. {c |} {res}BMW 320i             9,735    Foreign {txt}{c |}
+ 73. {c |} {res}Volvo 260           11,995    Foreign {txt}{c |}
+ 74. {c |} {res}Peugeot 604         12,990    Foreign {txt}{c |}
+     {c BLC}{hline 19}{c -}{hline 8}{c -}{hline 10}{c BRC}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sort price
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. sum price in 1/5
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 7}price {c |}{res}          5      3560.6    246.9399       3291       3798
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. {txt}*(1 variable, 11 observations pasted into data editor)
+{com}
+. drop _all
+
+. {txt}*(1 variable, 11 observations pasted into data editor)
+{com}
+. drop _all
+
+. {txt}*(2 variables, 11 observations pasted into data editor)
+{com}
+. drop _all
+
+. gen score = 650  649 648 647 646 645 644 643 642 641 640 
+{err}invalid '649' 
+{txt}{search r(198), local:r(198);}
+
+{com}. 
+. . gen score = 650 649 648 647 646 645 644 643 642 641 640 
+{err}invalid '649' 
+{txt}{search r(198), local:r(198);}
+
+{com}. gen score = 1
+
+.  gen score == 650 649 648 647 646 645 644 643 642 641 640
+{err}variable {bf}score{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+{com}. clear
+
+.  gen score == 650 649 648 647 646 645 644 643 642 641 640
+{err}== invalid name
+{txt}{search r(198), local:r(198);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. input score     num
+
+     {txt}    score        num
+  1{com}. 650     193
+{txt}  2{com}. 649      26
+{txt}  3{com}. 648      23
+{txt}  4{com}. 647      16
+{txt}  5{com}. 646      21
+{txt}  6{com}. 645      26
+{txt}  7{com}. 644      32
+{txt}  8{com}. 643      23
+{txt}  9{com}. 642      38
+{txt} 10{com}. 641      29
+{txt} 11{com}. 640      38
+{txt} 12{com}. 
+{err}unexpected end of file
+{txt}{search r(612), local:r(612);}
+
+end of do-file
+
+{search r(612), local:r(612);}
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. input score     num
+
+     {txt}    score        num
+  1{com}. 650     193
+{txt}  2{com}. 649      26
+{txt}  3{com}. 648      23
+{txt}  4{com}. 647      16
+{txt}  5{com}. 646      21
+{txt}  6{com}. 645      26
+{txt}  7{com}. 644      32
+{txt}  8{com}. 643      23
+{txt}  9{com}. 642      38
+{txt} 10{com}. 641      29
+{txt} 11{com}. 640      38
+{txt} 12{com}. 
+{err}unexpected end of file
+{txt}{search r(612), local:r(612);}
+
+end of do-file
+
+{search r(612), local:r(612);}
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. input score     num
+
+     {txt}    score        num
+  1{com}. 650     193
+{txt}  2{com}. 649      26
+{txt}  3{com}. 648      23
+{txt}  4{com}. 647      16
+{txt}  5{com}. 646      21
+{txt}  6{com}. 645      26
+{txt}  7{com}. 644      32
+{txt}  8{com}. 643      23
+{txt}  9{com}. 642      38
+{txt} 10{com}. 641      29
+{txt} 11{com}. 640      38
+{txt} 12{com}. 
+{err}unexpected end of file
+{txt}{search r(612), local:r(612);}
+
+end of do-file
+
+{search r(612), local:r(612);}
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. input score     num
+
+     {txt}    score        num
+  1{com}. 650     193
+{txt}  2{com}. 649      26
+{txt}  3{com}. 648      23
+{txt}  4{com}. 647      16
+{txt}  5{com}. 646      21
+{txt}  6{com}. 645      26
+{txt}  7{com}. 644      32
+{txt}  8{com}. 643      23
+{txt}  9{com}. 642      38
+{txt} 10{com}. 641      29
+{txt} 11{com}. 640      38
+{txt} 12{com}. 
+{err}unexpected end of file
+{txt}{search r(612), local:r(612);}
+
+end of do-file
+
+{search r(612), local:r(612);}
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. input score     num
+{err}variable {bf}score{sf} already defined
+{txt}{search r(110), local:r(110);}
+
+end of do-file
+
+{search r(110), local:r(110);}
+
+{com}. do "C:\Users\来柱\Documents\STD298c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. input score     num
+
+     {txt}    score        num
+  1{com}. 650     193
+{txt}  2{com}. 649      26
+{txt}  3{com}. 648      23
+{txt}  4{com}. 647      16
+{txt}  5{com}. 646      21
+{txt}  6{com}. 645      26
+{txt}  7{com}. 644      32
+{txt}  8{com}. 643      23
+{txt}  9{com}. 642      38
+{txt} 10{com}. 641      29
+{txt} 11{com}. 640      38
+{txt} 12{com}. end
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 
