@@ -143,14 +143,62 @@ format id %5.0f  //正常显示
 format id %05.0f //05表示，5位数，补足的前面用0补全
  
 
+***************4.1 拆分与连接数据文件要掌握的命令
+/*
+命令 命令解释 用法示例
+drop 删除变量或观察值 drop math
+keep 保留变量或观察值 keep math
+append 将两个数据集拼接(观察值拼接) append using math
+merge 将两个数据集合并（变量合并） merge id using math
+reshape 将数据重整 reshape long inc,i(id) j(yr)
+stack 将多列数据转换成一列数据 stack a b c d, into(e f)
+xpose 数据转置 xpose, clear
+reshape 将数据重整 reshape long inc,i(id) j(yr)
+
+*/
+******************4.4.2 案例:面板数据重整
+
+input id str10 name math2003 math2004 economy2003 economy2004 //注意name前的str1
+1 John 40 13 68 55
+2 Chris 80 64 52 87
+3 Jack 90 55 76 25
+4 Huang 43 60 90 4
+5 Tom 70 68 96 42
+6 Han 53 10 85 89
+7 Phillip 85 61 36 52
+8 Jin 95 6 65 84
+end
+reshape long math economy,i(id name)j(year) //重整
+reshape wide math economy,i(id name)j(year)
+
+keep if year == 2003
+keep id math
+xpose, clear //转置
 
 
+scalar a="我爱" +"STATA" //要特别注意，引号必须是半角和英文模式
+. scalar list a //scalar 命令将两个字符运算后的结果赋于a，然后显示a
 
 
+input age
+age
+38
+.
+65
+42
+18
+80
+end
+gen a = (age>=65)
+gen b =(age>=65) if age<.
+gen c =(age==65) if age<.
 
+****************6.2 创造自己的命令：与STATA 互致问候
 
-
-
+capture program drop hello
+program hello
+display "你好,老兄" //请注意引号一定要在中文状态下输入
+end
 
 
 
